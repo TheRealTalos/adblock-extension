@@ -1,6 +1,6 @@
-var ad = false;
-function() {
 
+;(function() {
+  var ad = false;
   var timeout = setInterval(function() {
     if (window.location.pathname !== '/watch') {
       return;
@@ -11,7 +11,7 @@ function() {
     var btnSpeedReset = document.getElementById('PlayBackRate');
     var btnSpeedDown = document.getElementById('SpeedDown');
     var btnSkipAd = document.getElementsByClassName('videoAdUiSkipButton')[0];
-    //console.log("tic");
+    console.log(ad);
     if (btnSkipAd) {
       //console.log("skipad");
       eventFire(btnSkipAd, 'click');
@@ -31,7 +31,7 @@ function() {
       ad = false;
       eventFire(btnSpeedReset, 'click');
     }
-  }, 2000);
+  }, 100);
 
   function eventFire(el, etype, range){
     if (el.fireEvent) {
@@ -43,4 +43,4 @@ function() {
     }
   }
 
-}();
+})();
