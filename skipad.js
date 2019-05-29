@@ -11,23 +11,23 @@
     var btnSpeedReset = document.getElementById('PlayBackRate');
     var btnSpeedDown = document.getElementById('SpeedDown');
     var btnSkipAd = document.getElementsByClassName('ytp-ad-skip-button ytp-button')[0];
-    console.log(ad);
+    //console.log(ad);
     if (btnSkipAd) {
-      console.log("skipad");
+      //console.log("skipad");
       eventFire(btnSkipAd, 'click');
     }
     if (btnCloseBanner){
-      console.log("closeBanner");
+      //console.log("closeBanner");
       eventFire(btnCloseBanner, 'click');
     }
     if (isVideoAd){
       ad = true;
-      console.log("speedup");
+      //console.log("speedup");
       for (var i = 0; i < 64; i++){
         eventFire(btnSpeedUp, 'click');
       }
     }else if (ad){
-      console.log("button reset");
+      //console.log("button reset");
       ad = false;
       eventFire(btnSpeedReset, 'click');
     }
