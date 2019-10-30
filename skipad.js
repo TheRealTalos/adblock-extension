@@ -6,10 +6,9 @@
       return;
     }
     var isVideoAd = document.getElementsByClassName('ad-showing')[0];
-    var btnCloseBanner = document.getElementsByClassName('svg-close-button')[0];
-    var btnSpeedUp = document.getElementById('SpeedUp');
-    var btnSpeedReset = document.getElementById('PlayBackRate');
-    var btnSpeedDown = document.getElementById('SpeedDown');
+    var btnCloseBanner = document.getElementsByClassName('ytp-ad-overlay-close-button')[0];
+    var btnSpeedUp = document.querySelector('faster')
+    var btnSpeedDown = document.querySelector('slower')
     var btnSkipAd = document.getElementsByClassName('ytp-ad-skip-button ytp-button')[0];
     //console.log(ad);
     if (btnSkipAd) {
@@ -23,13 +22,15 @@
     if (isVideoAd){
       ad = true;
       //console.log("speedup");
-      for (var i = 0; i < 64; i++){
+      for (var i = 0; i < 160; i++){
         eventFire(btnSpeedUp, 'click');
       }
     }else if (ad){
       //console.log("button reset");
       ad = false;
-      eventFire(btnSpeedReset, 'click');
+      for (var i = 0; i < 160; i++){
+        eventFire(btnSpeedDown, 'click');
+      }
     }
   }, 100);
 
